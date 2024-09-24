@@ -4,54 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
-    <title>Web Form</title>
+    <title>CANTech Contact Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
+            font-family: 'Georgia', serif;
+            background-color:whitesmoke;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            flex-direction: column;
+            height: fit-content;
             margin: 0;
+            
+            animation: fadeIn 1.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         form {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            max-width: 450px;
             width: 100%;
+            animation: slideDown 0.7s ease;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-20px); }
+            to { transform: translateY(0); }
         }
 
         h2 {
             text-align: center;
-            color: #333;
+            color: #003366;
         }
 
         label {
             font-weight: bold;
             margin-bottom: 8px;
             display: block;
-            color: #555;
+            color: #003366;
         }
 
-        input[type="text"], input[type="email"] {
+        input[type="text"], select {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             margin-bottom: 15px;
             border: 1px solid #ccc;
-            border-radius: 4px;
+            border-radius: 5px;
             font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus, select:focus {
+            border-color: #66b3ff;
         }
 
         input[type="submit"] {
             width: 100%;
-            padding: 10px;
-            background-color: #28a745;
+            padding: 12px;
+            background-color: #1a75ff;
             border: none;
-            border-radius: 4px;
+            border-radius: 5px;
             color: white;
             font-size: 16px;
             cursor: pointer;
@@ -59,7 +80,18 @@
         }
 
         input[type="submit"]:hover {
-            background-color: #218838;
+            background-color: #004db3;
+        }
+
+        footer {
+            width: 100%;
+            background-color: #003366;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
         }
 
         .form-group {
@@ -68,60 +100,112 @@
 
         @media (max-width: 600px) {
             form {
-                padding: 15px;
+                padding: 20px;
             }
 
             input[type="submit"] {
                 font-size: 14px;
             }
 
-            input[type="text"], input[type="email"] {
+            input[type="text"], select {
                 font-size: 14px;
             }
+            #nav-list{
+                display: flex;
+                flex-direction: column;
+                display: block;
+
+            }
+            .navbar{
+                display: block;
+            }
         }
+        .navbar{
+            justify-content: space-between;
+            width: 100%;
+            height: fit-content;
+            padding: 1rem 1rem;
+            background-color: #1a75ff;
+            color: white;
+            margin-right:3rem ;
+            margin-left: 2rem;
+            font-size: 1.1rem;
+           
+            
+        }
+        #nav-list{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            color: white;
+          
+
+        }
+        .list-items{
+            margin: 1rem 1rem;
+            list-style-type: none;
+        }
+
     </style>
 </head>
 <body>
 
+   <div class="navbar">
+    <h2 style="color: white; font-weight: bolder;">CANTech</h2>
+    <ul id="nav-list">
+        <li class="list-items">Home</li>
+        <li class="list-items">About Us</li>
+        <li class="list-items">Contact Us</li>
+        <li class="list-items">Services</li>
+    </ul>
+   </div>
+
     <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00D5j000008yHpd" method="POST">
-        <h2>Contact Form</h2>
-        
-        <input type=hidden name="oid" value="00D5j000008yHpd">
-        <input type=hidden name="retURL" value="https://farm-assist-github-io.vercel.app/">
+        <h2>Schedule Form Filling Appointment</h2>
+
+        <input type="hidden" name="oid" value="00D5j000008yHpd">
+        <input type="hidden" name="retURL" value="https://chandrakeshram.github.io/CANTech.com/">
 
         <div class="form-group">
-            <label for="first_name">First Name</label>
-            <input id="first_name" maxlength="40" name="first_name" size="20" type="text" required />
-        </div>
-
-        <div class="form-group">
-            <label for="last_name">Last Name</label>
-            <input id="last_name" maxlength="80" name="last_name" size="20" type="text" required />
+            <label for="last_name">Name</label>
+            <input id="last_name" maxlength="40" name="last_name" size="20" type="text" required />
         </div>
 
         <div class="form-group">
             <label for="email">Email</label>
-            <input id="email" maxlength="80" name="email" size="20" type="email" required />
-        </div>
-
-        <div class="form-group">
-            <label for="company">Company</label>
-            <input id="company" maxlength="40" name="company" size="20" type="text" />
+            <input id="email" maxlength="80" name="email" size="20" type="text" required />
         </div>
 
         <div class="form-group">
             <label for="city">City</label>
-            <input id="city" maxlength="40" name="city" size="20" type="text" />
+            <input id="city" maxlength="40" name="city" size="20" type="text" required />
         </div>
 
         <div class="form-group">
-            <label for="state">State/Province</label>
-            <input id="state" maxlength="20" name="state" size="20" type="text" />
+            <label for="mobile">Mobile</label>
+            <input id="mobile" maxlength="40" name="mobile" size="20" type="text" required />
+        </div>
+
+        <div class="form-group">
+            <label for="product_interest">Product Interest</label>
+            <select id="product_interest" name="00N5j00000DWfjW" title="Product Interest" required>
+                <option value="">--None--</option>
+                <option value="PAN Card">PAN Card</option>
+                <option value="Aadhar Card">Aadhar Card</option>
+                <option value="Voter Id">Voter Id</option>
+                <option value="Driving License">Driving License</option>
+                <option value="Others">Others</option>
+            </select>
         </div>
 
         <input type="submit" name="submit" value="Submit">
-
     </form>
+
+    <footer>
+        &copy; 2024 CANTech - All Rights Reserved
+    </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 </body>
 </html>
