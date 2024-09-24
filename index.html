@@ -4,8 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
-    <title>CANTech Contact Form</title>
+    <title>Aapka Mitra</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+    </style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Hind&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+        </style>
+        
     <style>
         body {
             font-family: 'Georgia', serif;
@@ -16,7 +23,9 @@
             flex-direction: column;
             height: fit-content;
             margin: 0;
+            font-family: "Roboto", sans-serif;
             
+            font-style: normal;
             animation: fadeIn 1.5s ease;
         }
 
@@ -64,13 +73,13 @@
         }
 
         input[type="text"]:focus, select:focus {
-            border-color: #66b3ff;
+            border-color: #003366;
         }
 
         input[type="submit"] {
             width: 100%;
             padding: 12px;
-            background-color: #1a75ff;
+            background-color: #003366;
             border: none;
             border-radius: 5px;
             color: white;
@@ -80,7 +89,7 @@
         }
 
         input[type="submit"]:hover {
-            background-color: #004db3;
+            background-color: #003366;
         }
 
         footer {
@@ -118,17 +127,42 @@
             }
             .navbar{
                 display: block;
+                padding: 0rem 0rem;
+                margin: auto;
+                justify-content: center;
+                justify-self: center;
+                align-items: center;
+                text-align: center;
+            }
+            .navbar img{
+                margin: auto;
+                width: 250px;
+                justify-self: center;
+                justify-content: center;
+                margin-left: -1.7rem;
+                
+            }
+            .list-items{
+            margin: 0rem 1rem;
+            list-style-type: none;
+            font-size: 0.8rem;
+            
+            transition: 2s ease-in ;
+            }
+            .list-items:hover{
+            font-weight: bolder;
+            text-decoration: underline;
+            color: aqua;
             }
         }
         .navbar{
             justify-content: space-between;
             width: 100%;
             height: fit-content;
-            padding: 1rem 1rem;
-            background-color: #1a75ff;
+            padding: 0rem 4rem;
+            background-color: #003366;
             color: white;
-            margin-right:3rem ;
-            margin-left: 2rem;
+            align-items: center;
             font-size: 1.1rem;
            
             
@@ -136,14 +170,33 @@
         #nav-list{
             display: flex;
             justify-content: space-around;
-            align-items: center;
+            
             color: white;
           
 
         }
         .list-items{
-            margin: 1rem 1rem;
+            margin: 0rem 1rem;
             list-style-type: none;
+            font-size: 1.4rem;
+            
+            transition: 2s ease-in ;
+        }
+        .list-items:hover{
+            font-weight: bolder;
+            text-decoration: underline;
+            color: aqua;
+        }
+        #title{
+            font-family: "Hind", sans-serif;
+        }
+        #marqq{
+            height: 3rem;
+            font-size: 1.1rem;
+            font-weight: medium;
+            margin-top: 0.2rem;
+            
+
         }
 
     </style>
@@ -151,7 +204,7 @@
 <body>
 
    <div class="navbar">
-    <h2 style="color: white; font-weight: bolder;">CANTech</h2>
+    <img src="image1.png" alt="" >
     <ul id="nav-list">
         <li class="list-items">Home</li>
         <li class="list-items">About Us</li>
@@ -159,6 +212,7 @@
         <li class="list-items">Services</li>
     </ul>
    </div>
+   <marquee behavior="" direction="" id="marqq">We fill all the types of forms based on your requirements. We believe in Pay After Success Form Completion<span class="badge text-bg-danger " style="margin-left: 0.5rem;">  New</span></marquee>
 
     <form id="myForm" action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00D5j000008yHpd" method="POST">
         <h2>Schedule Form Filling Appointment</h2>
